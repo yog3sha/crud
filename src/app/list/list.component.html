@@ -1,0 +1,24 @@
+<div class="container">
+    <hr>
+    <h3>List of Employees</h3>
+    <table class="table">
+      <thead>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of emplist; let i=index">
+          <td>{{emp.username}}</td>
+          <td>{{emp.email}}</td>
+          <td>{{emp.contact}}</td>
+          
+          <td>
+            <a class="btn-lg" [routerLink]="['/edit']" (click)="onEdit(emp.id)" > Edit </a>
+            <a class="btn-lg" (click)="onDelete(emp['id'])" > Delete </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
